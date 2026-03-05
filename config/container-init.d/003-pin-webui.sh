@@ -14,6 +14,9 @@ set -e
   WEBUI_PATH=$(wget -S --spider http://localhost:5001/webui 2>&1 | grep -oi '/ipfs/[a-z2-7]*' | head -1)
 
   if [ -n "$WEBUI_PATH" ]; then
-    ipfs pin add -q "$WEBUI_PATH" > /dev/null 2>&1
+    echo "Pinning WebUI: $WEBUI_PATH"
+    ipfs pin add --progress "$WEBUI_PATH"
+  else
+    echo "Warning: could not detect WebUI CID" >&2
   fi
 ) &
