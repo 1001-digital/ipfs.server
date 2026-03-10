@@ -19,6 +19,13 @@
 		request_body {
 			max_size 0
 		}
-		reverse_proxy localhost:5001
+		reverse_proxy localhost:5001 {
+			flush_interval -1
+			transport http {
+				response_header_timeout 0
+				read_timeout 0
+				write_timeout 0
+			}
+		}
 	}
 }
