@@ -1,9 +1,15 @@
 {
   "name": "@1001/ipfs-server",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "kamal:setup": "set -a && . ./.env.production && set +a && kamal setup",
     "kamal:deploy": "set -a && . ./.env.production && set +a && kamal deploy",
-    "kamal:sh": "set -a && . ./.env.production && set +a && kamal app exec -i --reuse \"sh\""
+    "kamal:sh": "set -a && . ./.env.production && set +a && kamal app exec -i --reuse \"sh\"",
+    "changeset": "changeset"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.6.0",
+    "@changesets/cli": "^2.30.0"
   }
 }
