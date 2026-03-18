@@ -71,7 +71,7 @@ pnpm kamal:setup
 
 ### Gateway Configuration
 
-These environment variables can be set in `deploy.yml` under `env.clear` to tune gateway behavior:
+These optional environment variables can be set in `.env.production` to tune gateway behavior:
 
 | Variable | Default | Description |
 |---|---|---|
