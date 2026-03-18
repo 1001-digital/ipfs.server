@@ -8,6 +8,7 @@
     "kamal:sh": "set -a && . ./.env.production && set +a && kamal app exec -i --reuse \"sh\"",
     "changeset": "changeset"
   },
+  "packageManager": "pnpm@10.30.0",
   "devDependencies": {
     "@changesets/changelog-github": "^0.6.0",
     "@changesets/cli": "^2.30.0"
