@@ -81,6 +81,10 @@ These optional environment variables can be set in `.env.production` to tune nod
 | `STORAGE_MAX` | `20GB` | Maximum disk space for the IPFS datastore. |
 | `CONN_MGR_HIGH_WATER` | `96` | Maximum number of peer connections to maintain. |
 | `CONN_MGR_LOW_WATER` | `32` | Peer connections to trim down to when `HighWater` is reached. |
+| `CONTAINER_CPUS` | `2` | CPU cores available to the Docker container. |
+| `CONTAINER_MEMORY` | `6G` | Maximum memory for the Docker container. |
+| `RESOURCE_MGR_MAX_MEMORY` | `4GB` | Maximum memory for the libp2p resource manager. Should be less than `CONTAINER_MEMORY` to leave headroom for Caddy, GC, and other overhead. |
+| `RESOURCE_MGR_MAX_FILE_DESCRIPTORS` | `4096` | Maximum file descriptors for the libp2p resource manager. |
 
 ## Deployment
 

@@ -28,3 +28,7 @@ ipfs config Datastore.StorageMax "${STORAGE_MAX:-20GB}"
 # Peer connection limits
 ipfs config --json Swarm.ConnMgr.HighWater "${CONN_MGR_HIGH_WATER:-96}"
 ipfs config --json Swarm.ConnMgr.LowWater "${CONN_MGR_LOW_WATER:-32}"
+
+# Resource manager limits (memory & file descriptors for libp2p)
+ipfs config Swarm.ResourceMgr.MaxMemory "${RESOURCE_MGR_MAX_MEMORY:-4GB}"
+ipfs config --json Swarm.ResourceMgr.MaxFileDescriptors "${RESOURCE_MGR_MAX_FILE_DESCRIPTORS:-4096}"

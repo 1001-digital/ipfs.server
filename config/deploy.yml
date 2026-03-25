@@ -8,6 +8,8 @@ servers:
     hosts:
       - <%= ENV["DEPLOY_HOST"] %>
     options:
+      cpus: <%= ENV["CONTAINER_CPUS"] || "2" %>
+      memory: <%= ENV["CONTAINER_MEMORY"] || "6G" %>
       publish:
         - 4001:4001
         - 4001:4001/udp
@@ -41,6 +43,8 @@ env:
     STORAGE_MAX: <%= ENV["STORAGE_MAX"] || "20GB" %>
     CONN_MGR_HIGH_WATER: <%= ENV["CONN_MGR_HIGH_WATER"] || "96" %>
     CONN_MGR_LOW_WATER: <%= ENV["CONN_MGR_LOW_WATER"] || "32" %>
+    RESOURCE_MGR_MAX_MEMORY: <%= ENV["RESOURCE_MGR_MAX_MEMORY"] || "4GB" %>
+    RESOURCE_MGR_MAX_FILE_DESCRIPTORS: <%= ENV["RESOURCE_MGR_MAX_FILE_DESCRIPTORS"] || "4096" %>
   secret:
     - ADMIN_PASSWORD_HASH
 
