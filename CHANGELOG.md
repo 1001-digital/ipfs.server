@@ -1,5 +1,14 @@
 # @1001/ipfs-server
 
+## 1.1.0
+
+### Minor Changes
+
+- [`c924671`](https://github.com/1001-digital/ipfs.server/commit/c9246713c86d9e92029f74fddb6ca8ea878787d9) Thanks [@jwahdatehagh](https://github.com/jwahdatehagh)! - Add configurable resource limits for CPU, memory, and file descriptors
+
+  - Container-level limits (`CONTAINER_CPUS`, `CONTAINER_MEMORY`) are now configurable via environment variables (defaults: 2 CPUs, 6G memory)
+  - Added Kubo libp2p resource manager limits (`RESOURCE_MGR_MAX_MEMORY`, `RESOURCE_MGR_MAX_FILE_DESCRIPTORS`) with defaults of 4GB and 4096
+
 ## 1.0.1
 
 ### Patch Changes
