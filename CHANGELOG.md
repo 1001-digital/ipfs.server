@@ -1,5 +1,11 @@
 # @1001/ipfs-server
 
+## 1.0.1
+
+### Patch Changes
+
+- [`96d71e7`](https://github.com/1001-digital/ipfs.server/commit/96d71e7b813f1c721106bd092651f35c39868dbe) Thanks [@jwahdatehagh](https://github.com/jwahdatehagh)! - Increase default storage max from 10GB to 20GB
+
 ## 1.0.0
 
 ### Major Changes
