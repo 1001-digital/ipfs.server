@@ -30,7 +30,7 @@ admin.ipfs.1001.digital▶│  :5080  Caddy ──▶ :5001 Kubo API│
 - **Unlimited upload size** with streaming support for large files
 - **IPNS records** with a 14-day lifetime to survive extended downtime
 - **Web UI** automatically pinned on startup for admin access
-- **Persistent storage** via a Docker volume (`ipfs_data`)
+- **Persistent storage** via a Docker volume (`ipfs_data`) or configurable bind mount
 
 ## Prerequisites
 
@@ -81,6 +81,7 @@ These optional environment variables can be set in `.env.production` to tune nod
 | `STORAGE_MAX` | `20GB` | Maximum disk space for the IPFS datastore. |
 | `CONN_MGR_HIGH_WATER` | `96` | Maximum number of peer connections to maintain. |
 | `CONN_MGR_LOW_WATER` | `32` | Peer connections to trim down to when `HighWater` is reached. |
+| `IPFS_VOLUME` | `ipfs_data` | Storage volume for IPFS data. Use a host path (e.g. `/mnt/ipfs/ipfs_data`) for bind mounts. |
 | `CONTAINER_CPUS` | `2` | CPU cores available to the Docker container. |
 | `CONTAINER_MEMORY` | `6G` | Maximum memory for the Docker container. |
 | `RESOURCE_MGR_MAX_MEMORY` | `4GB` | Maximum memory for the libp2p resource manager. Should be less than `CONTAINER_MEMORY` to leave headroom for Caddy, GC, and other overhead. |
