@@ -1,5 +1,14 @@
 # @1001/ipfs-server
 
+## 1.2.0
+
+### Minor Changes
+
+- [`27a9ec0`](https://github.com/1001-digital/ipfs.server/commit/27a9ec0a62635993e4a9d58a0a56c039f554844b) Thanks [@jwahdatehagh](https://github.com/jwahdatehagh)! - Add configurable storage volume via `IPFS_VOLUME` environment variable
+
+  - The IPFS data volume can now be configured via `IPFS_VOLUME` env var, defaulting to the named Docker volume `ipfs_data`
+  - Supports host path bind mounts (e.g. `/mnt/ipfs/ipfs_data`) for custom storage locations
+
 ## 1.1.0
 
 ### Minor Changes
