@@ -32,7 +32,7 @@ if (!host || !password) {
   process.exit(1);
 }
 
-const gateway = process.env.IPFS_HOST || "ipfs.1001.digital";
+const gateway = process.env.IPFS_HOST || "ipfs.io";
 const auth =
   "Basic " + Buffer.from(`${user}:${password}`).toString("base64");
 
