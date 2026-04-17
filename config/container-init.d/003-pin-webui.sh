@@ -6,7 +6,7 @@ set -e
 # correct across Kubo version upgrades.
 (
   # Wait for the API to be ready
-  while ! wget -qO /dev/null http://localhost:5001/api/v0/version 2>/dev/null; do
+  while ! wget -qO /dev/null --post-data='' http://localhost:5001/api/v0/version 2>/dev/null; do
     sleep 1
   done
 
