@@ -1,5 +1,16 @@
 # @1001/ipfs-server
 
+## 1.4.1
+
+### Patch Changes
+
+- [`9e238a4`](https://github.com/1001-digital/ipfs.server/commit/9e238a42e01cec6b0f13721c8423ced499116c51) Thanks [@jwahdatehagh](https://github.com/jwahdatehagh)! - Fix WebUI pin script by using POST for Kubo API health check
+
+  The init script that pins the IPFS WebUI was sending GET requests to
+  `/api/v0/version`, which Kubo rejects with 405 since v0.5.0. This
+  caused the readiness loop to spin forever, preventing the WebUI from
+  being pinned. Switch to `--post-data=''` so wget sends a POST.
+
 ## 1.4.0
 
 ### Minor Changes
