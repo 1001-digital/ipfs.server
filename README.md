@@ -6,7 +6,7 @@ A production-ready IPFS node built on [Kubo](https://github.com/ipfs/kubo) with 
 
 A single Docker image bundles two services:
 
-- **Kubo v0.40.0** — IPFS daemon providing content pinning, IPNS publishing, and a public gateway
+- **Kubo v0.41.0** — IPFS daemon providing content pinning, IPNS publishing, and a public gateway
 - **Caddy** — reverse proxy adding basic auth to the admin API and handling large uploads
 
 ```
