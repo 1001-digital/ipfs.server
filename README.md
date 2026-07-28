@@ -6,7 +6,7 @@ A production-ready IPFS node built on [Kubo](https://github.com/ipfs/kubo) with 
 
 A single Docker image bundles two services:
 
-- **Kubo v0.41.0** — IPFS daemon providing content pinning, IPNS publishing, and a public gateway
+- **Kubo v0.42.0** — IPFS daemon providing content pinning, IPNS publishing, and a public gateway
 - **Caddy** — reverse proxy adding basic auth to the admin API and handling large uploads
 
 ```
@@ -78,6 +78,7 @@ These optional environment variables can be set in `.env.production` to tune nod
 |---|---|---|
 | `GATEWAY_NO_FETCH` | `true` | When `true`, only serves pinned/cached content. Set to `false` to fetch from the IPFS network on demand. |
 | `GATEWAY_DESERIALIZED_RESPONSES` | `true` | Enables directory listings and deserialized responses. |
+| `IPFS_TELEMETRY` | `off` | Disables Kubo's anonymous usage telemetry by default. |
 | `IPNS_RECORD_LIFETIME` | `336h` | How long IPNS records remain valid. Default is 14 days. |
 | `STORAGE_MAX` | `20GB` | Maximum disk space for the IPFS datastore. |
 | `ENABLE_GC` | `true` | Enable automatic garbage collection. Frees unpinned content when storage exceeds the GC watermark. |
@@ -98,6 +99,11 @@ pnpm kamal:deploy
 ```
 
 This builds the Docker image, pushes it to Docker Hub, and deploys to your server. Kamal handles zero-downtime deploys, health checks, and TLS.
+
+> **Pinned Kamal version:** the scripts invoke Kamal 2.10.1 because the
+> production proxy is currently v0.9.0. Kamal 2.11 and newer require proxy
+> v0.9.2 or newer and abort after the pre-deploy hook has stopped the running
+> container.
 
 ## Uploading Content
 

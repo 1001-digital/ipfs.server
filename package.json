@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "upload": "set -a && . ./.env.production && set +a && node scripts/upload.ts",
-    "kamal:setup": "set -a && . ./.env.production && set +a && kamal setup",
-    "kamal:deploy": "set -a && . ./.env.production && set +a && kamal deploy",
-    "kamal:sh": "set -a && . ./.env.production && set +a && kamal app exec -i --reuse \"sh\"",
+    "kamal:setup": "set -a && . ./.env.production && set +a && kamal _2.10.1_ setup",
+    "kamal:deploy": "set -a && . ./.env.production && set +a && kamal _2.10.1_ deploy",
+    "kamal:sh": "set -a && . ./.env.production && set +a && kamal _2.10.1_ app exec -i --reuse \"sh\"",
     "changeset": "changeset"
   },
   "packageManager": "pnpm@10.30.0",
